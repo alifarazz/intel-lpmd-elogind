@@ -17,6 +17,7 @@ AM_CFLAGS = \
 	$(libnl30_CFLAGS)\
 	$(libnlgenl30_CFLAGS) \
 	$(SYSTEMD_CFLAGS) \
+	$(libelogind_CFLAGS) \
 	-I src
 
 EXTRA_DIST=Makefile.glib \
@@ -42,7 +43,8 @@ intel_lpmd_LDADD = \
 	$(XML_LIBS) \
 	$(UPOWER_LIBS) \
 	$(libnlgenl30_LIBS) \
-	$(SYSTEMD_LIBS)
+	$(SYSTEMD_LIBS) \
+	$(libelogind_LIBS)
 
 BUILT_SOURCES = \
 	lpmd-resource.c

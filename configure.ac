@@ -67,9 +67,11 @@ PKG_CHECK_MODULES(XML, libxml-2.0 >= 2.4)
 PKG_CHECK_MODULES(libnl30, [libnl-3.0], libnl30=yes, libnl30=no)
 PKG_CHECK_MODULES(libnlgenl30, [libnl-genl-3.0], libnlgenl30=yes, libnlgenl30=no)
 
-PKG_CHECK_MODULES([SYSTEMD], [libsystemd], [],
-      [PKG_CHECK_MODULES([SYSTEMD], [libsystemd-daemon], [],
-       AC_MSG_ERROR([libsystemd support requested but found]))])
+PKG_CHECK_MODULES(libelogind, libelogind >= 2.4.0)
+
+# PKG_CHECK_MODULES([SYSTEMD], [libsystemd], [],
+#       [PKG_CHECK_MODULES([SYSTEMD], [libsystemd-daemon], [],
+#        AC_MSG_ERROR([libsystemd support requested but found]))])
 
 PKG_CHECK_MODULES(UPOWER, upower-glib)
 
