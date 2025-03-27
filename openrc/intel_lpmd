@@ -1,0 +1,15 @@
+#!/usr/bin/openrc-run
+# Distributed under the terms of the GNU General Public License v2
+
+description="Intel Linux Energy Optimizer (lpmd) Service"
+supervisor="supervise-daemon"
+# pidfile="/run/intel_lpmd.pid"
+command="/usr/bin/intel_lpmd"
+command_args="--no-daemon --dbus-enable"
+# command_args="--no-daemon --dbus-enable --loglevel=info"
+# command_background=1
+
+depend() {
+    need dbus localmount hostname
+    use logger
+}
